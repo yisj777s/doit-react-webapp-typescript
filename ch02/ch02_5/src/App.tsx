@@ -18,8 +18,8 @@ export default function App() {
       <FileInput />
       <OnChange />
       <VariousInputs />
-      <StopPropagation />
-      {/* <EventBubbling />
+      {/* <StopPropagation />
+      <EventBubbling />
       <DispatchEvent />
       <ReactOnClick />
       <OnClick />
