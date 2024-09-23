@@ -16,8 +16,8 @@ export default function App() {
       <FileDrop />
       <DragDrop />
       <FileInput />
-      <OnChange />
-      {/* <VariousInputs />
+      {/* <OnChange />
+      <VariousInputs />
       <StopPropagation />
       <EventBubbling />
       <DispatchEvent />
