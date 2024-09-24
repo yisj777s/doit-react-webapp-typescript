@@ -15,8 +15,8 @@ export default function App() {
     <div>
       <FileDrop />
       <DragDrop />
-      <FileInput />
-      {/* <OnChange />
+      {/* <FileInput />
+      <OnChange />
       <VariousInputs />
       <StopPropagation />
       <EventBubbling />
