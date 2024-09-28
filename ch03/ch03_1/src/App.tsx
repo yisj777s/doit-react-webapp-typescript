@@ -11,8 +11,8 @@ export default function App() {
       <UsingIconWithCSSClass />
       <UsingIcon />
       <Style />
-      <Icon />
-      <Bootstrap />
+      {/* <Icon />
+      <Bootstrap /> */}
     </div>
   )
 }
