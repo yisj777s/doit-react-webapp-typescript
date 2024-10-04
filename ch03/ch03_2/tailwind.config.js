@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  safelist: [{pattern: /^line-clamp-(\d+)$/}],
+  plugins: [require('@tailwindcss/line-clamp'), require('daisyui')]
 }
-
