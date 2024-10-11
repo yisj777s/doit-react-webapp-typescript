@@ -16,7 +16,9 @@ export default function TextsTest() {
         </p>
         <Paragraph numberOfLines={5}>{paragraphs}</Paragraph>
         <Summary className="text-center text-gray-500">{summery}</Summary>
-        <p className="text-center text-p">{D.randomDay</p>
+        <p className="text-center text-p">
+          {D.randomDayMonthYear()} ({D.randomRelativeDate()})
+        </p>
       </div>
     </div>
   )
