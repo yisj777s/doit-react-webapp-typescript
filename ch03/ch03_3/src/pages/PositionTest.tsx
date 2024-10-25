@@ -12,10 +12,14 @@ export default function PositionTest() {
       <Title>PositionTest</Title>
       <Div className="relative border-2 border-gray-500"
         src={src} height="10rem">
-        <Div className="absolute p-2 text-white bg-red-500">{icons}</Div>
-        <Div className="absolute p-2 text-white bg-blue-500">{icons}</Div>
-        <Div className="absolute">{icons}</Div>
-        <Div className="absolute">{icons}</Div>
+        <Div className="absolute p-2 text-white bg-red-500"
+          left="1rem" top="1rem">{icons}</Div>
+        <Div className="absolute p-2 text-white bg-blue-500"
+          right="1rem" top="1rem">{icons}</Div>
+        <Div className="absolute p-2 text-white bg-pink-500"
+          left="1rem" bottom="1rem">{icons}</Div>
+        <Div className="absolute p-2 text-white bg-yellow-500"
+          right="1rem" bottom="1rem">{icons}</Div>
       </Div>
     </Div>
   )
