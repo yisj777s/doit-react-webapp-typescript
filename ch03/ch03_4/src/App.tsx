@@ -15,7 +15,7 @@ export default function App() {
       <JustifyCenterTest />
       <MinMaxTest />
       <WrapTest />
-      <DirectionTest />
+      {/* <DirectionTest /> */}
     </main>
   )
 }
