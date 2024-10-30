@@ -13,8 +13,8 @@ export default function App() {
       <UserContainer />
       <AlignTest />
       <JustifyCenterTest />
-      <MinMaxTest />
-      <WrapTest />
+      {/* <MinMaxTest /> */}
+      {/* <WrapTest /> */}
       {/* <DirectionTest /> */}
     </main>
   )
