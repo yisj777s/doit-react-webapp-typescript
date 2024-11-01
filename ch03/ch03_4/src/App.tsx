@@ -11,7 +11,7 @@ export default function App() {
     <main>
       <CardContainer />
       <UserContainer />
-      <AlignTest />
+      {/* <AlignTest /> */}
       {/* <JustifyCenterTest /> */}
       {/* <MinMaxTest /> */}
       {/* <WrapTest /> */}
