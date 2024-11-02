@@ -1,10 +1,14 @@
 import {Title} from '../components'
+import * as D from '../data'
+import User from './User'
 
-export default function CopyMe() {
+export default function UserContainer() {
+  const children = D.makeArray(10).map(D.makeRandomUser)
+
   return (
-    <section className="mt-4">
-      <Title>CopyMe</Title>
-      <div className="mt-4"></div>
+    <section>
+      <Title>UserContainer</Title>
+      <div></div>
     </section>
   )
 }

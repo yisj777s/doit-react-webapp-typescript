@@ -1,4 +1,4 @@
-import {Div, Title, Subtitle} from '../components'
+import {Title, Subtitle} from '../components'
 import * as D from '../data'
 
 export default function AlignTest() {
