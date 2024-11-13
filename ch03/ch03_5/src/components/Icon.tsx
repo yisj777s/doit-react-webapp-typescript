@@ -2,7 +2,7 @@ import type {FC, DetailedHTMLProps, HTMLAttributes} from 'react'
 
 type ReactSpanProps = DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>
 
-type IconProps = ReactSpanProps & {
+export type IconProps = ReactSpanProps & {
   name: string
 }
 
