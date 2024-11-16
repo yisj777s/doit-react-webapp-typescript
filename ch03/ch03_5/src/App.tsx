@@ -5,9 +5,9 @@ import ModalTest from './pages/ModalTest'
 export default function App() {
   return (
     <main>
-      <ButtonTest />
-      {/* <InputTest />
-      <ModalTest /> */}
+      {/* <ButtonTest /> */}
+      <InputTest />
+      {/* <ModalTest /> */}
     </main>
   )
 }
