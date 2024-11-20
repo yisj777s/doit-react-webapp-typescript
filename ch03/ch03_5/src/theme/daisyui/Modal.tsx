@@ -24,5 +24,21 @@ export const ModalContent: FC<ModalContentProps> = ({
 }) => {
   const showCloseIcon = onCloseIconClicked ? true : false
   const className = ['modal-box', showCloseIcon && 'relative', _className].join(' ')
-  if
+  if (!showCloseIcon) return <div {...props} className={className} children={children} />
+
+  const closeIconClassName = _closeIconClassName ?? 'btn-primary btn-outline btn-sm'
+  return (
+    <div {...props} className={className}>
+      <Div className="absolute" right="0.5rem" top="0.5rem">
+        <Icon name="close" className={closeIconClassName} onClick={onCloseIconClicked} />
+      </Div>
+      {children}
+    </div>
+  )
+}
+
+export type ModalActionProps = ReactDivProps & {}
+export const ModalAction: FC<ModalActionProps> = ({className: _className, ...props}) => {
+  const className = ['modal-action', _className].join(' ')
+  return <div {...props} className={className} />
 }

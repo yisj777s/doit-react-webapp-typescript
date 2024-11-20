@@ -6,8 +6,8 @@ export default function App() {
   return (
     <main>
       {/* <ButtonTest /> */}
-      <InputTest />
-      {/* <ModalTest /> */}
+      {/* <InputTest /> */}
+      <ModalTest />
     </main>
   )
 }
