@@ -29,15 +29,17 @@ export default function CreateOrUseTest() {
     ))
   )
 
-  console.log('headTexts', headTexts)
-  console.log('users => ', users)
-  console.log('head =', head)
-  console.log('body =', body)
-
   return (
-    <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">UseOrCreateTest</h2>
-      <div className="mt-4"></div>
-    </section>
+    <div className="mt-4">
+      <Title>CreateOrUseTest</Title>
+      <div className="p-4 mt-4 overflow-x-auto">
+        <table className="table w-full table-zebra table-compact">
+          <thead>
+            <tr>{head}</tr>
+          </thead>
+          <tbody>{body}</tbody>
+        </table>
+      </div>
+    </div>
   )
 }
