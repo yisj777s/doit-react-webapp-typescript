@@ -13,9 +13,33 @@ export default function Memo() {
     () => headTexts.map(text => <th key={text}>{text}</th>),
     [headTexts]
   )
+  //prettier-ignore
+  const body = useMemo(
+    () => 
+      users.map((user, index) => (
+      <tr key={user.uuid}>
+        <th>{index + 1}</th>
+        <td className="flex items-center">
+          <Avatar src={user.avatar} size="1.5rem" />
+          <p className="ml-2">{user.name}</p>
+        </td>
+        <td>{user.jobTitle}</td>
+        <td>{user.email}</td>
+      </tr>)), 
+      [users]
+  )
 
-  console.log('headText =>', headTexts)
-  console.log('head =>', head)
-
-  return <div></div>
+  return (
+    <div className="mt-4">
+      <Title>Memo</Title>
+      <div className="w-full mt-4 overflow-x-auto">
+        <table className="table w-full table-zebra table-compact">
+          <thead>
+            <tr>{head}</tr>
+          </thead>
+          <tbody>{body}</tbody>
+        </table>
+      </div>
+    </div>
+  )
 }
