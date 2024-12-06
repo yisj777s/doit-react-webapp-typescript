@@ -8,7 +8,7 @@ export default function App() {
     <div>
       <HighOrderCallback />
       <Callback />
-      <Memo />
+      {/* <Memo /> */}
       {/* <UseOrCreateTest /> */}
     </div>
   )
