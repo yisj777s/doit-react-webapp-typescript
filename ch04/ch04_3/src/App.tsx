@@ -1,15 +1,23 @@
-import UseOrCreateTest from './pages/UseOrCreateTest'
-import Memo from './pages/Memo'
-import Callback from './pages/Callback'
-import HighOrderCallback from './pages/HighOrderCallback'
+import NumberState from './pages/NumberState'
+import InputTest from './pages/InputTest'
+import ShowHideModal from './pages/ShowHideModal'
+import RadioInputTest from './pages/RadioInputTest'
+import HigherOrderRadioInputTest from './pages/HigherOrderRadioInputTest'
+import BasicForm from './pages/BasicForm'
+import ObjectState from './pages/ObjectState'
+import ArrayState from './pages/ArrayState'
 
 export default function App() {
   return (
-    <div>
-      <HighOrderCallback />
-      <Callback />
-      {/* <Memo /> */}
-      {/* <UseOrCreateTest /> */}
-    </div>
+    <main>
+      <ArrayState />
+      <ObjectState />
+      <BasicForm />
+      <HigherOrderRadioInputTest />
+      <RadioInputTest />
+      <ShowHideModal />
+      <InputTest />
+      <NumberState />
+    </main>
   )
 }
