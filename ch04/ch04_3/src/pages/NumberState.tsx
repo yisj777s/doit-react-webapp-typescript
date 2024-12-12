@@ -17,7 +17,14 @@ export default function NumberState() {
       <Title>NumberState</Title>
       <div className="mt-4">
         <div>
-          <Icon />
+          <Icon
+            name="add"
+            className="btn-primary btn-lg"
+            iconClassName="text-4xl"
+            onClick={increment}
+          />
+          <p>{count}</p>
+          <Icon name="remove" />
         </div>
       </div>
     </section>
