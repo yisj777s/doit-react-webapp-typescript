@@ -1,7 +1,12 @@
-export default function CopyMe() {
+import {useState} from 'react'
+import {Title} from '../components'
+
+export default function InputTest() {
+  const [value, setValue] = useState<string>('')
+  const [checked, setChecked] = useState<boolean>(false)
   return (
     <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
+      <Title>InputTest</Title>
       <div className="mt-4"></div>
     </section>
   )
