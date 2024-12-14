@@ -17,7 +17,7 @@ export default function App() {
       <RadioInputTest />
       <ShowHideModal />
       <InputTest />
-      <NumberState />
+      {/* <NumberState /> */}
     </main>
   )
 }
