@@ -15,8 +15,8 @@ export default function App() {
       <BasicForm />
       <HigherOrderRadioInputTest />
       <RadioInputTest />
-      <ShowHideModal />
-      <InputTest />
+      {/* <ShowHideModal /> */}
+      {/* <InputTest /> */}
       {/* <NumberState /> */}
     </main>
   )
