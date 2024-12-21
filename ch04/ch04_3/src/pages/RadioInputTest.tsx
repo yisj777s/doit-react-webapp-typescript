@@ -17,7 +17,7 @@ export default function RadioInputTest() {
             type="radio"
             name="jobs"
             className="mr-4 radio radio-primary"
-            checked={value == selectedJobTitle}
+            checked={value === selectedJobTitle}
             defaultValue={value}
             onChange={onChange}
           />
