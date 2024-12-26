@@ -12,7 +12,7 @@ export default function App() {
     <main>
       <ArrayState />
       <ObjectState />
-      <BasicForm />
+      {/* <BasicForm /> */}
       {/* <HigherOrderRadioInputTest /> */}
       {/* <RadioInputTest /> */}
       {/* <ShowHideModal /> */}
