@@ -4,7 +4,7 @@ import {Title} from '../components'
 export default class ClassLifecycle extends Component {
   state = {
     today: new Date(),
-    intervalId: null as unknown as NodeJS.Timer // 타입스크립트가 요구하는 구현 방식식
+    intervalId: null as unknown as NodeJS.Timer // 타입스크립트가 요구하는 구현 방식
   }
   componentDidMount() {
     const duration = 1000
