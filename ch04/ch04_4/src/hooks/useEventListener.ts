@@ -5,5 +5,10 @@ export const useEventListener = (
   type: string,
   callback: EventListenerOrEventListenerObject | null
 ) => {
-  useEffect(() => {}, [])
+  useEffect(() => {
+    if (target && callback) {
+      target.addEventListener(type, callback)
+      return () => target.removeEventListener(type, callback)
+    }
+  }, [target, type, callback])
 }
