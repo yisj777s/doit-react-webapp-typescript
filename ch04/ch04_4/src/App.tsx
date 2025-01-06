@@ -7,7 +7,7 @@ export default function App() {
     <main>
       <FetchTest />
       <WindowResizeTest />
-      <ClassLifecycle />
+      {/* <ClassLifecycle /> */}
     </main>
   )
 }

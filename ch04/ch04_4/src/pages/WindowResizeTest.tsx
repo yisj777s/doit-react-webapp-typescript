@@ -1,8 +1,15 @@
-export default function CopyMe() {
+import {Title, Subtitle} from '../components'
+import {useWindowResize} from '../hooks'
+
+export default function WindowResizeTest() {
+  const [width, height] = useWindowResize()
+
   return (
     <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
-      <div className="mt-4"></div>
+      <Title>WindowResizeTest</Title>
+      <Subtitle>
+        width: {width}, height: {height}
+      </Subtitle>
     </section>
   )
 }

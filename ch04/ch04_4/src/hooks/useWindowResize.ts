@@ -9,6 +9,8 @@ export const useWindowResize = () => {
   }, []) // 컴포넌트가 마운트될 때 창 크기 설정정
 
   useEventListener(window, 'resize', () => {
-    setWidh
-  })
+    setWidthHeight(notUsed => [window.innerWidth, window.innerHeight])
+  }) // 창 크기가 변경될 때마다 설정정
+
+  return widthHeight
 }
