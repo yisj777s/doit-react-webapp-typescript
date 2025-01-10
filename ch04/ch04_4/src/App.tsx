@@ -6,7 +6,7 @@ export default function App() {
   return (
     <main>
       <FetchTest />
-      <WindowResizeTest />
+      {/* <WindowResizeTest /> */}
       {/* <ClassLifecycle /> */}
     </main>
   )
