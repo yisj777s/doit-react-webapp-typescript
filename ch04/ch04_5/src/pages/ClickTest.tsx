@@ -1,8 +1,20 @@
-export default function CopyMe() {
+import {useRef, useCallback} from 'react'
+import {Title} from '../components'
+import {Button} from '../theme/daisyui'
+
+export default function ClickTest() {
+  const inputRef = useRef<HTMLInputElement>(null)
+  const onClick = useCallback(() => inputRef.current?.click(), [])
+
   return (
     <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
-      <div className="mt-4"></div>
+      <Title>ClickTest</Title>
+      <div className="flex items-center justify-center mt-4">
+        <Button className="mr-4 btn-primary" onClick={onClick}>
+          CLICK ME
+        </Button>
+        <input ref={inputRef} className="hidden" type="file" accept="image/*" />
+      </div>
     </section>
   )
 }
