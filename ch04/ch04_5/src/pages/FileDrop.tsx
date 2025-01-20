@@ -25,9 +25,39 @@ export default function FileDrop() {
     [toggleLoading]
   )
 
+  const onInputChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      setError(null)
+      const files = e.target.files
+      files && makeImageUrls(Array.from(files))
+    },
+    [makeImageUrls]
+  )
+
+  const onDivDragOver = useCallback((e: DragEvent) => e.preventDefault(), [])
+  const onDivDrop = useCallback(
+    (e: DragEvent) => {
+      e.preventDefault()
+      setError(null)
+      const files = e.dataTransfer?.files
+      files && makeImageUrls(Array.from(files))
+    },
+    [makeImageUrls]
+  )
+
+  //prettier-ignore
+  const images = useMemo( () =>
+      imageUrls.map((url, index) => {
+        <Div key={index} src={url}
+          className="m-2 bg-transparent bg-center bg-no-repeat bg-contain"
+          width="5rem" height="5rem" />
+      }), [imageUrls]
+  )
+
+  //prettier-ignore
   return (
     <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
+      <Title>FileDrop</Title>
       <div className="mt-4"></div>
     </section>
   )

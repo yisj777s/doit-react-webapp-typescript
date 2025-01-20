@@ -11,9 +11,9 @@ export default function App() {
       {/* <ValidatableInputTest />
       <ForwardRefTest />
       <InputValueTest />
-      <InputFocusTest />
-      <FileDrop /> */}
-      <ClickTest />
+      <InputFocusTest /> */}
+      <FileDrop />
+      {/* <ClickTest /> */}
     </main>
   )
 }
