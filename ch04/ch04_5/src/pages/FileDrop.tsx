@@ -47,18 +47,39 @@ export default function FileDrop() {
 
   //prettier-ignore
   const images = useMemo( () =>
-      imageUrls.map((url, index) => {
+      imageUrls.map((url, index) => (
         <Div key={index} src={url}
           className="m-2 bg-transparent bg-center bg-no-repeat bg-contain"
           width="5rem" height="5rem" />
-      }), [imageUrls]
-  )
+      )), [imageUrls])
 
   //prettier-ignore
   return (
     <section className="mt-4">
       <Title>FileDrop</Title>
-      <div className="mt-4"></div>
+      {error && (
+        <div className="p-4 mt-4 bg-red-200">
+          <p className="text-3xl text-red-500 text-bold">{error.message}</p>
+        </div>
+      )}
+
+      <div onClick={onDivClick}
+        className="w-full mt-4 bg-gray-200 border border-gray-500">
+      {loading && (
+        <div className="items-center justify-center lfex">
+          <Button className="btn-circle loading"></Button>
+        </div>
+      )}
+
+        <div onDragOver={onDivDragOver} onDrop={onDivDrop}
+          className="flex items-center justify-center h-40 cursor-pointer felx-col">
+          <p className="text-3xl font-bold">drop images or click me</p>
+        </div>
+        <input ref={inputRef} onChange={onInputChange}
+          multiple className="hidden" type="file" accept="image/*"  />
+      </div>
+
+      <div className="flex flex-wrap justify-center">{images}</div>
     </section>
   )
 }
