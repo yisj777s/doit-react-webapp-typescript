@@ -9,10 +9,10 @@ export default function App() {
   return (
     <main>
       {/* <ValidatableInputTest />
-      <ForwardRefTest />
+      <ForwardRefTest /> */}
       <InputValueTest />
-      <InputFocusTest /> */}
-      <FileDrop />
+      {/* <InputFocusTest /> */}
+      {/* <FileDrop /> */}
       {/* <ClickTest /> */}
     </main>
   )
