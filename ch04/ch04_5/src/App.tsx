@@ -8,9 +8,9 @@ import ValidatableInputTest from './pages/ValidatableInputTest'
 export default function App() {
   return (
     <main>
-      {/* <ValidatableInputTest />
-      <ForwardRefTest /> */}
-      <InputValueTest />
+      {/* <ValidatableInputTest /> */}
+      <ForwardRefTest />
+      {/* <InputValueTest /> */}
       {/* <InputFocusTest /> */}
       {/* <FileDrop /> */}
       {/* <ClickTest /> */}
