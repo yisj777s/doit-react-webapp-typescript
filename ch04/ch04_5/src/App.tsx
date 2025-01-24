@@ -8,8 +8,8 @@ import ValidatableInputTest from './pages/ValidatableInputTest'
 export default function App() {
   return (
     <main>
-      {/* <ValidatableInputTest /> */}
-      <ForwardRefTest />
+      <ValidatableInputTest />
+      {/* <ForwardRefTest /> */}
       {/* <InputValueTest /> */}
       {/* <InputFocusTest /> */}
       {/* <FileDrop /> */}

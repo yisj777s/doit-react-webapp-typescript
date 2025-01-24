@@ -11,7 +11,7 @@ export default function ForwardRefTest() {
 
   // prettier-ignore
   return (
-    <section className="mt-36">
+    <section className="mt-4">
       <Title>ForwardRefTest</Title>
       <div className="flex justify-center mt-4">
         <div className="flex flex-col w-1/3 p-2">

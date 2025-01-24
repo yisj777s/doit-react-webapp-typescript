@@ -1,4 +1,4 @@
-import {FC, DetailedHTMLProps, InputHTMLAttributes} from 'react'
+import {DetailedHTMLProps, InputHTMLAttributes} from 'react'
 import {forwardRef} from 'react'
 
 // prettier-ignore
