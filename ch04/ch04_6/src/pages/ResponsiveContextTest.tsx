@@ -1,8 +1,14 @@
-export default function CopyMe() {
+import {Title, Subtitle} from '../components'
+import {useResponsive} from '../contexts'
+
+export default function ResponsiveContextTest() {
+  const breakpoint = useResponsive()
   return (
     <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
-      <div className="mt-4"></div>
+      <Title>ReponsiveContextTest</Title>
+      <div className="mt-4">
+        <Subtitle>breakpoint: {breakpoint}</Subtitle>
+      </div>
     </section>
   )
 }
