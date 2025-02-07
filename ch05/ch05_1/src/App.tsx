@@ -10,12 +10,16 @@ type AppState = {
 const initialAppState = {
   today: new Date()
 }
-const rootReducer = (state: AppState = )
+const rootReducer = (state: AppState = initialAppState, action: Action) => state
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: getDefaultMiddleware => getDefaultMiddleware()
+})
 
 export default function App() {
   return (
-    <ReduxProvider>
-      <main>
+    <ReduxProvider store={store}>
+      <main className="p-8">
         <UseReducerClock />
         <ReduxClock />
       </main>
