@@ -1,7 +1,13 @@
-export default function CopyMe() {
+import {useSelector, useDispatch} from 'react-redux'
+import {Title} from '../components'
+import {useInterval} from '../hooks'
+import type {AppState} from '../store'
+import * as C from '../store/clock'
+
+export default function ClockTest() {
   return (
     <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
+      <Title>ClockTest</Title>
       <div className="mt-4"></div>
     </section>
   )
