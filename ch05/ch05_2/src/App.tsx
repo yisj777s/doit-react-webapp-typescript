@@ -12,7 +12,7 @@ export default function App() {
       <CardTest />
       <RemoteUserTest />
       <CounterTest />
-      <ClockTest />
+      {/* <ClockTest /> */}
     </ReduxProvider>
   )
 }
