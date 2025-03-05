@@ -1,6 +1,6 @@
 import * as T from './types'
 
-const initialState: T.State = {}
+const initialState: T.State = 0
 
 export const reducer = (state: T.State = initialState, action: T.Actions) => {
   return state
