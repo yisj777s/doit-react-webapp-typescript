@@ -7,6 +7,5 @@ export const reducer = (state: T.State = initialState, action: T.Actions) => {
     case '@counter/setCounter':
       return state + action.payload
   }
-
   return state
 }

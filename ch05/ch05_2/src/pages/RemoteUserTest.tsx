@@ -1,7 +1,12 @@
+import {useState, useCallback, useEffect} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
+import {useToggle} from '../hooks'
+import {Title} from '../components'
+
 export default function CopyMe() {
   return (
-    <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
+    <section className="mb-80">
+      <Title>RemoteUserTest</Title>
       <div className="mt-4"></div>
     </section>
   )
