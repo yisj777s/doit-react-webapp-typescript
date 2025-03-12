@@ -40,7 +40,21 @@ export default function RemoteUserTest() {
   return (
     <section className="mb-4">
       <Title>RemoteUserTest</Title>
-      <div className="mt-4"></div>
+      <div className="flex justify-center mt-4">
+        <Button className="btn-sm btn-primary" onClick={getRemoteUser}>
+          GET REMOTE USER
+        </Button>
+        <Button className="ml-4 btn-sm btn-primary" onClick={changeName}>
+          CHANGE NAME
+        </Button>
+        <Button className="ml-4 btn-sm btn-primary" onClick={changeEmail}>
+          CHANGE EMAIL
+        </Button>
+        <Button className="ml-4 btn-sm btn-primary" onClick={changePicture}>
+          CHANGE PICTURE
+        </Button>
+      </div>
+      {loading && <div></div>}
     </section>
   )
 }
