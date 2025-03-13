@@ -54,7 +54,26 @@ export default function RemoteUserTest() {
           CHANGE PICTURE
         </Button>
       </div>
-      {loading && <div></div>}
+      {loading && (
+        <div className="flex items-center jusfify-center">
+          <Button className="btn-circle loading"></Button>
+        </div>
+      )}
+      {error && (
+        <div className="p-4 mt-4 bg-red-200">
+          <p className="text-3xl text-red-500 text-bold">{error.message}</p>
+        </div>
+      )}
+
+      <div className="flex justify-center p-4 mt-4">
+        <Avatar src={user.picture.large} />
+        <div className="ml-4">
+          <p className="text-xl text-bold">
+            {user.name.title}. {user.name.first} {user.name.last}
+          </p>
+          <p className="italic text-gray-600">{user.email}</p>
+        </div>
+      </div>
     </section>
   )
 }
