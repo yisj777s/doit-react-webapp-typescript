@@ -13,7 +13,7 @@ const Card: FC<UserCardProps> = ({card, onRemove}) => {
   const {avatar, name, jobTitle} = writer
 
   return (
-    <Div>
+    <Div className="m-2 overflow-hidden border shadow-lg rounded-xl" width="10rem">
       <Div src={image} className="relative h-20">
         <Icon
           name="remove"
@@ -22,17 +22,17 @@ const Card: FC<UserCardProps> = ({card, onRemove}) => {
         />
       </Div>
       <Div className="flex flex-col p-2">
-        <Div minHeight="4"></Div>
+        <Div minHeight="4rem" height="4rem" maxHeight="4rem">
+          <Div className="flex flex-row items-center">
+            <Avatar src={avatar} size="2rem" />
+            <Div className="ml-2">
+              <p className="text-xs font-bold">{name}</p>
+              <p className="text-xs text-gray-500">{jobTitle}</p>
+            </Div>
+          </Div>
+        </Div>
       </Div>
     </Div>
   )
 }
-
-export default function CardTest() {
-  return (
-    <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
-      <div className="mt-4"></div>
-    </section>
-  )
-}
+export default Card
