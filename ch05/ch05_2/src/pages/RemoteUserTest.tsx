@@ -16,7 +16,7 @@ export default function RemoteUserTest() {
   const getRemoteUser = useCallback(() => {
     toggleLoading()
     D.fetchRandomUser()
-      .then(user => dispatch(D.setUser(user)))
+      .then(user => dispatch(R.setUser(user)))
       .catch(setError)
       .finally(toggleLoading)
   }, [dispatch, toggleLoading])
@@ -31,8 +31,9 @@ export default function RemoteUserTest() {
     () => dispatch(R.changeEmail(D.randomEmail())),
     [dispatch]
   )
-  const changePicture = useCallback(() =>
-    dispatch(R.changePicture({large: D.randomAvatar()}), [dispatch])
+  const changePicture = useCallback(
+    () => dispatch(R.changePicture({large: D.randomAvatar()})),
+    [dispatch]
   )
 
   useEffect(getRemoteUser, [getRemoteUser])

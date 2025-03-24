@@ -8,7 +8,7 @@ export const changeEmail = (payload: string): T.ChangeEmailAction => ({
   type: '@remoteUser/changeEmail',
   payload
 })
-export const chnageName = (payload: T.NameType): T.ChangeNameAction => ({
+export const changeName = (payload: T.NameType): T.ChangeNameAction => ({
   type: '@remoteUser/changeName',
   payload
 })

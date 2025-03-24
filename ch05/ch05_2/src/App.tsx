@@ -10,9 +10,9 @@ export default function App() {
   return (
     <ReduxProvider store={store}>
       <CardTest />
-      <RemoteUserTest />
-      <CounterTest />
-      <ClockTest />
+      {/* <RemoteUserTest /> */}
+      {/* <CounterTest />
+      <ClockTest /> */}
     </ReduxProvider>
   )
 }

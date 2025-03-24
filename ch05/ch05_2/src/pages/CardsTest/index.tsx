@@ -31,8 +31,11 @@ export default function CardsTest() {
 
   return (
     <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
-      <div className="mt-4"></div>
+      <Title>CardsTest</Title>
+      <div className="flex justify-center mt-4">
+        <Icon name="add" className="btn-primary" onClick={addCard} />
+      </div>
+      <div className="flex flex-wrap mt-4">{children}</div>
     </section>
   )
 }
