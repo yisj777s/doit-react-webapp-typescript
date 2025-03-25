@@ -2,6 +2,7 @@ import type {FC} from 'react'
 import type {ICard} from '../../data'
 import {Div, Avatar} from '../../components'
 import {Icon} from '../../theme/daisyui'
+import * as D from '../../data'
 
 export type UserCardProps = {
   card: ICard
@@ -9,7 +10,8 @@ export type UserCardProps = {
 }
 
 const Card: FC<UserCardProps> = ({card, onRemove}) => {
-  const {image, writer} = card
+  const makeCard = D.makeRandomCard()
+  const {image, writer} = makeCard
   const {avatar, name, jobTitle} = writer
 
   return (
