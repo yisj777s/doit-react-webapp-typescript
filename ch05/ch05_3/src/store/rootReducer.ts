@@ -1,2 +1,10 @@
 import {combineReducers} from 'redux'
-export const rootReducer = combineReducers({})
+import * as L from './loading'
+import * as E from './errorMessage'
+import * as F from './fetchUser'
+
+export const rootReducer = combineReducers({
+  lodaing: L.reducer,
+  errorMessage: E.reducer,
+  fetchUser: F.reducer
+})
