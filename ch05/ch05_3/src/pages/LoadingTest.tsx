@@ -1,8 +1,6 @@
-export default function CopyMe() {
-  return (
-    <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
-      <div className="mt-4"></div>
-    </section>
-  )
-}
+import {useCallback} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
+import type {AppState} from '../store'
+import {title} from '../components'
+import {Button} from '../theme/daisyui'
+import * as L from '../store/loading'
