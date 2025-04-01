@@ -10,9 +10,9 @@ export default function App() {
   return (
     <ReduxProvider store={store}>
       {/* <FetchTest />
-      <ErrorMessageTest />
-      <LoadingTest /> */}
-      <LoggerTest />
+      <ErrorMessageTest /> */}
+      <LoadingTest />
+      {/* <LoggerTest /> */}
     </ReduxProvider>
   )
 }
