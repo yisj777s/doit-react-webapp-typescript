@@ -25,6 +25,11 @@ export default function LoadingTest() {
             DO TIMED LOADING
           </Button>
         </div>
+        {loading && (
+          <div className="flex items-center justify-center">
+            <Button className="btn-circle loading"></Button>
+          </div>
+        )}
       </div>
     </section>
   )
