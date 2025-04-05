@@ -16,19 +16,17 @@ export default function ErrorMessageTest() {
 
   return (
     <section className="mt-4">
-      <Title>Loading</Title>
+      <Title>ErrorMessgeTest</Title>
       <div className="mt-4">
         <div className="flex justify-center mt-4">
-          <Button 
-            className="btn-sm btn-soft btn-secondary" 
-            onClick={doTimedLoading} 
-            disabled={loading}>
-            DO TIMED LOADING
+          <Button className="btn-sm btn-primary" onClick={generateErrorMessage}>
+            GENERATE ERROR MESSAGE
           </Button>
+          
         </div>
-        {loading && (
-          <div className="flex items-center justify-center">
-            <Button className="btn-circle loading"></Button>
+        {errorMessage.length && (
+          <div className="flex items-center justify-center bg-red-200">
+            <p className="text-2xl text-red-600 btn-circle">error: {errorMessage}</p>
           </div>
         )}
       </div>

@@ -9,10 +9,10 @@ export default function App() {
   const store = useStore()
   return (
     <ReduxProvider store={store}>
-      {/* <FetchTest />
-      <ErrorMessageTest /> */}
-      <LoadingTest />
-      {/* <LoggerTest /> */}
+      <FetchTest />
+      {/* <ErrorMessageTest /> */}
+      {/* <LoadingTest />
+      <LoggerTest /> */}
     </ReduxProvider>
   )
 }

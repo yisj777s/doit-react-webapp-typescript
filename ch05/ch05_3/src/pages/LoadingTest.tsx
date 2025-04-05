@@ -19,7 +19,7 @@ export default function LoadingTest() {
       <div className="mt-4">
         <div className="flex justify-center mt-4">
           <Button 
-            className="btn-sm btn-soft btn-secondary" 
+            className="btn-sm btn-primary" 
             onClick={doTimedLoading} 
             disabled={loading}>
             DO TIMED LOADING
