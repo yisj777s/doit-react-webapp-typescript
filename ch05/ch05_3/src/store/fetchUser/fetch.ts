@@ -1,7 +1,7 @@
 import {Dispatch} from 'redux'
 import * as L from '../loading'
 import * as E from '../errorMessage'
-import {setUser, changName, changeEmail, changePicture} from './actions'
+import {setUser, changeName, changeEmail, changePicture} from './actions'
 import * as D from '../../data'
 
 export const getRemoteUser = () => (dispatch: Dispatch) => {
@@ -9,4 +9,15 @@ export const getRemoteUser = () => (dispatch: Dispatch) => {
   dispatch(E.setErrorMessage(''))
   D.fetchRandomUser()
     .then(user => dispatch(setUser(user)))
+    .catch((e: Error) => dispatch(E.setErrorMessage(e.message)))
+    .finally(() => dispatch(L.setLoading(false)))
 }
+export const changeNameByFetching = ()=> (dispatch: Dispatch) => {
+  dispatch(L.setLoading(true))
+  dispatch(E.setErrorMessage(''))
+  D.fetchRandomUser()
+    .then(user => dispatch(changeName(user.name)))
+    .catch((e: Error) => dispatch(E.setErrorMessage(e.message)))
+    .finally(() => dispatch(L.setLoading(false)))
+}
+export const 
