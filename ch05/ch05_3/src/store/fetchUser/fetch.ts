@@ -20,4 +20,20 @@ export const changeNameByFetching = ()=> (dispatch: Dispatch) => {
     .catch((e: Error) => dispatch(E.setErrorMessage(e.message)))
     .finally(() => dispatch(L.setLoading(false)))
 }
-export const 
+export const changeEmailByFetching = () => (dispatch: Dispatch) => {
+  dispatch(L.setLoading(true))
+  dispatch(E.setErrorMessage(''))
+  D.fetchRandomUser()
+    .then(user => dispatch(changeEmail(user.email)))
+    .catch((e: Error) => dispatch(E.setErrorMessage(e.message)))
+    .finally(() => dispatch(L.setLoading(false)))
+}
+
+export const changePictureByFetching = () => (dispatch: Dispatch) => {
+  dispatch(L.setLoading(true))
+  dispatch(E.setErrorMessage(''))
+  D.fetchRandomUser()
+    .then(user => dispatch(changePicture(user.picture)))
+    .catch((e: Error) => dispatch(E.setErrorMessage(e.message)))
+    .finally(() => dispatch(L.setLoading(false)))
+}
