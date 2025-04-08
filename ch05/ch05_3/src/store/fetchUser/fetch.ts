@@ -12,7 +12,7 @@ export const getRemoteUser = () => (dispatch: Dispatch) => {
     .catch((e: Error) => dispatch(E.setErrorMessage(e.message)))
     .finally(() => dispatch(L.setLoading(false)))
 }
-export const changeNameByFetching = ()=> (dispatch: Dispatch) => {
+export const changeNameByFetching = () => (dispatch: Dispatch) => {
   dispatch(L.setLoading(true))
   dispatch(E.setErrorMessage(''))
   D.fetchRandomUser()
