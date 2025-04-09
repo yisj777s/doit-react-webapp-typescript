@@ -1,6 +1,5 @@
-import {useState, useCallback, useEffect} from 'react'
+import {useCallback, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {useToggle} from '../hooks'
 import {Title, Avatar} from '../components'
 import {Button} from '../theme/daisyui'
 import * as D from '../data'
@@ -9,35 +8,20 @@ import * as F from '../store/fetchUser'
 
 export default function RemoteUserTest() {
   const dispatch = useDispatch()
-  const user = useSelector<AppState, R.State>(({remoteUser}) => remoteUser)
-  const [loading, toggleLoading] = useToggle()
-  const [error, setError] = useState<Error | null>(null)
+  const {
+    loading,
+    errorMessage,
+    fetchUser: user
+  } = useSelector<AppState,AppState>(state => state)
 
   const getRemoteUser = useCallback(() => {
-    toggleLoading()
-    D.fetchRandomUser()
-      .then(user => dispatch(R.setUser(user)))
-      .catch(setError)
-      .finally(toggleLoading)
-  }, [dispatch, toggleLoading])
+    dispatch<any>(F.getRemoteUser())
+  }, [dispatch])
   const changeName = useCallback(() => {
-    toggleLoading()
-    D.fetchRandomUser()
-      .then(user => dispatch(R.changeName(user.name)))
-      .catch(setError)
-      .finally(toggleLoading)
-  }, [dispatch, toggleLoading])
-  const changeEmail = useCallback(
-    () => dispatch(R.changeEmail(D.randomEmail())),
-    [dispatch]
-  )
-  const changePicture = useCallback(
-    () => dispatch(R.changePicture({large: D.randomAvatar()})),
-    [dispatch]
-  )
-
-  useEffect(getRemoteUser, [getRemoteUser])
-
+    dispatch<any>(F.changeNameByFetching())
+  }, [dispatch])
+  const 
+  
   return (
     <section className="mb-4">
       <Title>RemoteUserTest</Title>
