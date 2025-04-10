@@ -20,8 +20,17 @@ export default function RemoteUserTest() {
   const changeName = useCallback(() => {
     dispatch<any>(F.changeNameByFetching())
   }, [dispatch])
-  const 
-  
+  const changeEmail = useCallback(
+    () => dispatch(F.changeEmail(D.randomEmail())),
+    [dispatch]
+  )
+  const changePicture = useCallback(
+    () => dispatch(F.changePicture({large: D.randomAvatar()})),
+    [dispatch]
+  )
+
+  useEffect(getRemoteUser, [getRemoteUser])
+
   return (
     <section className="mb-4">
       <Title>RemoteUserTest</Title>
