@@ -33,18 +33,18 @@ export default function RemoteUserTest() {
 
   return (
     <section className="mb-4">
-      <Title>RemoteUserTest</Title>
+      <Title>FetchTest</Title>
       <div className="flex justify-center mt-4">
         <Button className="btn-sm btn-primary" onClick={getRemoteUser}>
           GET REMOTE USER
         </Button>
-        <Button className="ml-4 btn-sm btn-primary" onClick={changeName}>
+        <Button className="ml-4 btn-sm btn-accent" onClick={changeName}>
           CHANGE NAME
         </Button>
-        <Button className="ml-4 btn-sm btn-primary" onClick={changeEmail}>
+        <Button className="ml-4 btn-sm btn-success" onClick={changeEmail}>
           CHANGE EMAIL
         </Button>
-        <Button className="ml-4 btn-sm btn-primary" onClick={changePicture}>
+        <Button className="ml-4 btn-sm btn-secondary" onClick={changePicture}>
           CHANGE PICTURE
         </Button>
       </div>
@@ -53,9 +53,9 @@ export default function RemoteUserTest() {
           <Button className="btn-circle loading"></Button>
         </div>
       )}
-      {error && (
+      {errorMessage.length && (
         <div className="p-4 mt-4 bg-red-200">
-          <p className="text-3xl text-red-500 text-bold">{error.message}</p>
+          <p className="text-3xl text-red-500 text-bold">{errorMessage}</p>
         </div>
       )}
 
