@@ -1,8 +1,17 @@
-export default function CopyMe() {
+import {useCallback} from 'react'
+import {Title} from '../../components'
+import CreateListForm from './CreateListForm'
+
+export default function Board() {
+  const onCreateList = useCallback((uuid: string, title: string) => {
+    console.log('onCreateList', uuid, title)
+  }, [])
   return (
     <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
-      <div className="mt-4"></div>
+      <Title>Board</Title>
+      <div className="mt-4">
+        <CreateListForm onCreateList={onCreateList} />
+      </div>
     </section>
   )
 }

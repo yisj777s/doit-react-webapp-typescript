@@ -4,7 +4,7 @@ import * as LO from './listidOrders'
 import * as LC from './listidCardidOrders'
 import * as C from './cardEntities'
 
-export const rootReducers = combineReducers({
+export const rootReducer = combineReducers({
   listEntities: L.reducer,
   listidOrders: LO.reducer,
   listidCardidOrders: LC.reducer,
