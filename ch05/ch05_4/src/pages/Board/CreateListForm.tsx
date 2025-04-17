@@ -21,7 +21,7 @@ const CreateListForm: FC<CreateListFormProps> = ({onCreateList}) => {
     <div className="flex p-2">
       <input placeholder="title"
         value={value} onChange={onChange}
-        className="input-xs input-bordered input input-primary" />
+        className="input-xs input input-primary" />
      <Icon name="add" onClick={addList} disabled={!value.length}
       className="ml-2 btn-primary btn-xs" />
     </div>
