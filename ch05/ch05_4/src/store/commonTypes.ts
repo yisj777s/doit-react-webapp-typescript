@@ -10,4 +10,8 @@ export type CardidListid = {
   cardid: UUID
   listid: UUID
 }
-export type Listid
+export type ListidCardid = CardidListid
+export type ListidCardidS = {listid: UUID; cardids: UUID[]}
+export type CardidListidIndex = CardidListid & {
+  index: number
+}
