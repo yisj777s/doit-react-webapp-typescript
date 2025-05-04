@@ -3,5 +3,17 @@ import * as T from './types'
 const initialState: T.State = {}
 
 export const reducer = (state: T.State = initialState, action: T.Actions) => {
-  return state
+  switch (action.type) {
+    case '@listidCardids':
+      return {...state, [action.payload.listid]: action.payload.cardids}
+    case '@listidCardids/remove': {
+      const newState = {...state}
+      delete newState[action.payload]
+      return newState
+    }
+    case '@listidCardids/prependCardid': {
+      const cardids = state[action.payload.listid]
+      return {...state, [action.payload.listid]: [action.payload.cardid, ...cardids]}
+    }
+  }
 }

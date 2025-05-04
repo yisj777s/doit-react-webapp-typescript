@@ -12,7 +12,7 @@ export type RemoveListidAction = Action<'@listidCardids/remove'> & {
   payload: CT.UUID
 }
 
-export type PrependiCardidToListidAction = Action<'@listidCardids/prependCardid'> & {
+export type PrependCardidToListidAction = Action<'@listidCardids/prependCardid'> & {
   payload: CT.ListidCardid
 }
 export type AppendCardidToListidAction = Action<'@listidCardids/appendCardid'> & {
