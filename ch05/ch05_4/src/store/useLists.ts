@@ -28,13 +28,15 @@ export const useLists = () => {
   )
   const onRemoveList = useCallback(
     (listid: string) => () => {
-      listidCardidOrders[listid].forEach(cardid) => {
+      listidCardidOrders[listid].forEach(cardid => {
         dispatch(C.removeCard(cardid))
-      }
+      })
       dispatch(LC.removeListid(listid))
 
-      dispatchEvent()
-    }
+      dispatch(L.removeList(listid))
+      dispatch(LO.removeListidFromOrders(listid))
+    },
+    [dispatch, listidCardidOrders]
   )
   return {lists, onCreateList, onRemoveList}
 }
