@@ -21,8 +21,8 @@ export const useCards = (listid: UUID) => {
     const card = D.makeRandomCard()
     dispatch(C.addCard(card))
 
-    dispatch(LC.appendCardidToListid({listid, car}))
-  })
+    dispatch(LC.appendCardidToListid({listid, cardid: card.uuid}))
+  }, [dispatch, listid])
 
   const onRemoveCard = useCallback(
     (uuid: UUID) => () => {

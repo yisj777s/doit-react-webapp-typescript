@@ -4,7 +4,7 @@ const initialState: T.State = {}
 
 export const reducer = (state: T.State = initialState, action: T.Actions) => {
   switch (action.type) {
-    case '@listidCardids':
+    case '@listidCardids/set':
       return {...state, [action.payload.listid]: action.payload.cardids}
     case '@listidCardids/remove': {
       const newState = {...state}

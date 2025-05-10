@@ -25,6 +25,6 @@ export type RemoveCardidFromListidAction = Action<'@listidCardids/removeCardid'>
 export type Actions =
   | SetListidCardids
   | RemoveListidAction
-  | PrependiCardidToListidAction
+  | PrependCardidToListidAction
   | AppendCardidToListidAction
   | RemoveCardidFromListidAction
