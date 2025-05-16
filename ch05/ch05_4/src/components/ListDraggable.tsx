@@ -44,7 +44,7 @@ export const ListDraggable: FC<ListDraggableProps> = ({
       if (dragIndex === hoverIndex) {
         return
       }
-      noMove(dragIndex, hoverIndex)
+      onMove(dragIndex, hoverIndex)
       item.index = hoverIndex
     }
   })
