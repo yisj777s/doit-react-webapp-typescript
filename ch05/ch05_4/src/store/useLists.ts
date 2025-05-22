@@ -1,3 +1,4 @@
+import type {DropResult} from 'react-beautiful-dnd'
 import {useCallback} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import type {AppState} from '../store'
@@ -6,6 +7,7 @@ import * as LO from '../store/listidOrders'
 import * as L from '../store/listEntities'
 import * as C from '../store/cardEntities'
 import * as LC from '../store/listidCardidOrders'
+import * as U from '../utils'
 
 export const useLists = () => {
   const dispatch = useDispatch()
@@ -53,6 +55,41 @@ export const useLists = () => {
     },
     [dispatch, listidOrders]
   )
+  const onDragEnd = useCallback((result: DropResult) => {
+    console.log('onDragEnd result', result)
+    const destinationListid = result.destination?.droppableId
+    const destinationCardIndex = result.destination?.index
+    if (destinationListid === undefined || destinationCardIndex === undefined) return
+
+    const sourceListid = result.source.droppableId
+    const sourceCardIndex = result.source.index
+
+    if (destinationListid === sourceListid) {
+      const cardidOrders = listidCardidOrders[destinationListid]
+
+      dispatch(
+        LC.setListidCardids({
+          listid: destinationListid,
+          cardids: U.swapItemsInArray(cardidOrders, sourceCardIndex, destinationCardIndex)
+        })
+      )
+    } else {
+      const sourceCardidOrders = listidCardidOrders[sourceListid]
+      dispatch(
+        LC.setListidCardids({
+          listid: sourceListid,
+          cardids: U.removeItemAtIndexInArray(sourceCardidOrders, sourceCardIndex)
+        })
+      )
+      const destinationCardidOrders = lisitdCardidOrders[destinationListid]
+      dispatch(
+        LC.setListidCardids({
+          listid: destinationListid,
+          cardids: U.insertItemAtIndexInArray(desti)
+        })
+      )
+    }
+  })
 
   return {lists, onCreateList, onRemoveList, onMoveList}
 }
