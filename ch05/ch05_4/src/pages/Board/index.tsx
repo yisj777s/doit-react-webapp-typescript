@@ -3,7 +3,6 @@ import {DragDropContext} from 'react-beautiful-dnd'
 import {Title} from '../../components'
 import CreateListForm from './CreateListForm'
 import BoardList from '../BoardList'
-import {ListDroppable} from '../../components'
 
 import {useLists} from '../../store/useLists'
 

@@ -55,41 +55,52 @@ export const useLists = () => {
     },
     [dispatch, listidOrders]
   )
-  const onDragEnd = useCallback((result: DropResult) => {
-    console.log('onDragEnd result', result)
-    const destinationListid = result.destination?.droppableId
-    const destinationCardIndex = result.destination?.index
-    if (destinationListid === undefined || destinationCardIndex === undefined) return
+  const onDragEnd = useCallback(
+    (result: DropResult) => {
+      console.log('onDragEnd result', result)
+      const destinationListid = result.destination?.droppableId
+      const destinationCardIndex = result.destination?.index
+      if (destinationListid === undefined || destinationCardIndex === undefined) return
 
-    const sourceListid = result.source.droppableId
-    const sourceCardIndex = result.source.index
+      const sourceListid = result.source.droppableId
+      const sourceCardIndex = result.source.index
 
-    if (destinationListid === sourceListid) {
-      const cardidOrders = listidCardidOrders[destinationListid]
+      if (destinationListid === sourceListid) {
+        const cardidOrders = listidCardidOrders[destinationListid]
 
-      dispatch(
-        LC.setListidCardids({
-          listid: destinationListid,
-          cardids: U.swapItemsInArray(cardidOrders, sourceCardIndex, destinationCardIndex)
-        })
-      )
-    } else {
-      const sourceCardidOrders = listidCardidOrders[sourceListid]
-      dispatch(
-        LC.setListidCardids({
-          listid: sourceListid,
-          cardids: U.removeItemAtIndexInArray(sourceCardidOrders, sourceCardIndex)
-        })
-      )
-      const destinationCardidOrders = lisitdCardidOrders[destinationListid]
-      dispatch(
-        LC.setListidCardids({
-          listid: destinationListid,
-          cardids: U.insertItemAtIndexInArray(desti)
-        })
-      )
-    }
-  })
+        dispatch(
+          LC.setListidCardids({
+            listid: destinationListid,
+            cardids: U.swapItemsInArray(
+              cardidOrders,
+              sourceCardIndex,
+              destinationCardIndex
+            )
+          })
+        )
+      } else {
+        const sourceCardidOrders = listidCardidOrders[sourceListid]
+        dispatch(
+          LC.setListidCardids({
+            listid: sourceListid,
+            cardids: U.removeItemAtIndexInArray(sourceCardidOrders, sourceCardIndex)
+          })
+        )
+        const destinationCardidOrders = listidCardidOrders[destinationListid]
+        dispatch(
+          LC.setListidCardids({
+            listid: destinationListid,
+            cardids: U.insertItemAtIndexInArray(
+              destinationCardidOrders,
+              destinationCardIndex,
+              result.draggableId
+            )
+          })
+        )
+      }
+    },
+    [listidCardidOrders, dispatch]
+  )
 
-  return {lists, onCreateList, onRemoveList, onMoveList}
+  return {lists, onCreateList, onRemoveList, onMoveList, onDragEnd}
 }
