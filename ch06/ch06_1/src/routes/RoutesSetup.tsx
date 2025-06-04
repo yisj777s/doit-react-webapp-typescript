@@ -1,8 +1,13 @@
-export default function CopyMe() {
+import {Routes, Route} from 'react-router-dom'
+import NoMatch from './NoMatch'
+import Home from './Home'
+
+export default function RoutesSetup() {
   return (
-    <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
-      <div className="mt-4"></div>
-    </section>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/welcome" element={<Home title="Welcome to our site" />} />
+      <Route path="*" element={<NoMatch />} />
+    </Routes>
   )
 }
