@@ -1,6 +1,6 @@
 import {Routes, Route} from 'react-router-dom'
 import Layout from './Layout'
-import LandingPage from './LandigPage'
+import LandingPage from './LandingPage'
 import Board from '../pages/Board'
 import NoMatch from './NoMatch'
 
