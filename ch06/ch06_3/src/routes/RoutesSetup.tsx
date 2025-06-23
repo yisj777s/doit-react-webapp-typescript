@@ -15,7 +15,7 @@ export default function RoutesSetup() {
         <Route path="/board" element={<Board />} />
         <Route path="*" element={<NoMatch />} />
       </Route>
-      <Route path="/sigup" element={<Signup />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
       <Route path="*" element={<NoMatch />} />
