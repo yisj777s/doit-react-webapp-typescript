@@ -7,4 +7,5 @@ export const readObjectP = <T extends object>(key: string) =>
       .catch(reject)
   })
 
-export const writeObjectP
+export const writeObjectP = (key: string, value: object) =>
+  L.writeStringP(key, JSON.stringify(value))
