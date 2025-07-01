@@ -65,7 +65,7 @@ export default function SignUp() {
 
         <div className="mt-6 text-gray-800">
           Already have an account?
-          <Link className="btn btn-link btn-primary" to="/login/">
+          <Link className="btn btn-link" to="/login/">
             LOG IN
           </Link>
         </div>
