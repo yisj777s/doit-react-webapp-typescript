@@ -17,7 +17,6 @@ export const AuthContext = createContext<ContextType>({
   login: (email: string, password: string, callback?: Callback) => {},
   logout: (callback?: Callback) => {}
 })
-
 type AuthProviderProps = {}
 
 export const AuthProvider: FC<PropsWithChildren<AuthProviderProps>> = ({children}) => {
@@ -33,8 +32,8 @@ export const AuthProvider: FC<PropsWithChildren<AuthProviderProps>> = ({children
     setLoggedUser(notUsed => ({email, password}))
     callback && callback()
   }, [])
-  const logout = useCallback((email: string, password: string, callback?: Callback) => {
-    setLoggedUser(notUsed => ({email, password}))
+  const logout = useCallback((callback?: Callback) => {
+    setLoggedUser(undefined)
     callback && callback()
   }, [])
 

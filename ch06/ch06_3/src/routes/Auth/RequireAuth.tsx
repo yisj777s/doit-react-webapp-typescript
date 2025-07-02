@@ -1,8 +1,3 @@
-export default function CopyMe() {
-  return (
-    <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
-      <div className="mt-4"></div>
-    </section>
-  )
-}
+import type {FC, PropsWithChildren} from 'react'
+import {useEffect} from 'react'
+import {useNavigate} from 'react-router-dom'
