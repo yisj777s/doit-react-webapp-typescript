@@ -7,6 +7,7 @@ export const createExpressApp = (...args: any[]) => {
       console.log(`url='${req.url}, method=${req.method}`)
       next()
     })
+    .use(express.static('public'))
     .get('/', (req, res) => {
       res.json({message: 'Hello express World!'})
     })
