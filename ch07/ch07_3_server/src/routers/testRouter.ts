@@ -17,6 +17,7 @@ export const testRouter = (...args: any[]) => {
       const {body} = req
       res.json({ok: true, body})
     })
+<<<<<<< HEAD
     .put('/:id', (req, res) => {
       // id값을 가진 데이터의 수정을 요청하는 경우
       const {id} = req.params
@@ -28,4 +29,6 @@ export const testRouter = (...args: any[]) => {
       const {id} = req.params
       res.json({ok: true, id})
     })
+=======
+>>>>>>> 15dbd5952acfa87f321cc4cc09eee1be86beeb00
 }
