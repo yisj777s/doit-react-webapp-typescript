@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+import {setupRouters} from './setupRouters'
 
 export const createExpressApp = (...args: any[]) => {
   const app = express()
@@ -16,5 +17,5 @@ export const createExpressApp = (...args: any[]) => {
       res.json({message: 'Hello express World!'})
     })
 
-  return app
+  return setupRouters(app, ...args)
 }
