@@ -23,13 +23,26 @@ export const testRouter = (...args: any[]) => {
         if (e instanceof Error) res.json({ok: false, errorMessage: e.message})
       }
     })
-    .post('/', (req, res) => {
-      // req.body 의 데이터를 서버에 저장하기를 요청하는 경우
+    .post('/', async (req, res) => {
       const {body} = req
-      res.json({ok: true, body})
+      try {
+        try {
+          // 항상 id: '1234'인 문서가 단 하나만 있도록
+          // 과거 문서를 모두 지움(보통은 필요 없는 코드)
+          await test.drop()
+        } catch (e) {
+          /* 오류 무시 */
+        }
+
+        const insertResult = await test.insertOne({id: '1234', ...body})
+        const {insertedId} = insertResult
+        const findResult = await test.findOne({_id: insertedId})
+        res.json({ok: true, body: findResult})
+      } catch (e) {
+        if (e instanceof Error) res.json({ok: false, errorMessage: e.message})
+      }
     })
-    .put('/:id', (req, res) => {
-      // id값을 가진 데이터의 수정을 요청하는 경우
+    .put('/:id', async (req, res) => {
       const {id} = req.params
       const {body} = req
       res.json({ok: true, body, id})
