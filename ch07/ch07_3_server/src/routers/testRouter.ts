@@ -45,11 +45,26 @@ export const testRouter = (...args: any[]) => {
     .put('/:id', async (req, res) => {
       const {id} = req.params
       const {body} = req
-      res.json({ok: true, body, id})
+      try {
+        const updateResult = await test.findOneAndUpdate(
+          {id},
+          {$set: body},
+          {
+            returnDocument: 'after'
+          }
+        )
+        res.json({ok: true, body: updateResult && updateResult})
+      } catch (e) {
+        if (e instanceof Error) res.json({ok: false, errorMessage: e.message})
+      }
     })
-    .delete('/:id', (req, res) => {
-      // id값을 가진 데이터의 삭제를 요청하는 경우
+    .delete('/:id', async (req, res) => {
       const {id} = req.params
-      res.json({ok: true, id})
+      try {
+        await test.deleteOne({id})
+        res.json({ok: true})
+      } catch (e) {
+        if (e instanceof Error) res.json({ok: false, erreMessage: e.message})
+      }
     })
 }
