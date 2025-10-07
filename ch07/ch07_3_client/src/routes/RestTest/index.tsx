@@ -3,4 +3,14 @@ import PostTest from './PostTest'
 import PutTest from './PutTest'
 import DeleteTest from './DeleteTest'
 
-export default function RestTest() {}
+export default function RestTest() {
+  return (
+    <div>
+      <p className=""></p>
+      <DeleteTest />
+      <PutTest />
+      <PostTest />
+      <GetTest />
+    </div>
+  )
+}

@@ -11,6 +11,9 @@ export default function NavigationBar() {
         <Link to="/" className="btn btn-link">
           Home
         </Link>
+        <Link to="/rest" className="btn btn-link">
+          Rest Test
+        </Link>
         {loggedUser && (
           <Link to="/board" className="ml-4 btn btn-link">
             Board
