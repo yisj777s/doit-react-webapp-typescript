@@ -1,5 +1,5 @@
 import {FC} from 'react'
-import {ReactDivProps} from './Div'
+import type {ReactDivProps} from './Div'
 import {Div} from './Div'
 
 export type OverlayProps = ReactDivProps & {
