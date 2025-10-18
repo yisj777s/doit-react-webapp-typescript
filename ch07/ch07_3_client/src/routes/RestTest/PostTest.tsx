@@ -1,8 +1,11 @@
-export default function CopyMe() {
-  return (
-    <section className="mt-4">
-      <h2 className="text-5xl font-bold text-center">CopyMe</h2>
-      <div className="mt-4"></div>
-    </section>
-  )
+import {useState, useCallback} from 'react'
+import {Button} from '../../theme/daisyui'
+import {post} from '../../server'
+import * as D from '../../data'
+
+export default function PostTest() {
+  const [data, setData] = useState<object>({})
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+
+  const postTest = useCallback(() => {})
 }
