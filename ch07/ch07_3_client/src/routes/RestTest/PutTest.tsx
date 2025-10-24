@@ -22,9 +22,17 @@ export default function PutTest() {
   return (
     <div>
       <div className="mb-4">
-        <div></div>
+        <div className="flex justify-center mb-4">
+          <Button onClick={putTest} className="btn-primary">
+            PUT ID 1234
+          </Button>
+        </div>
       </div>
-      <div className="mt-4 text-center"></div>
+      <div className="mt-4 text-center">
+        <p>id: {data?.body?.id}</p>
+        <p>data: {JSON.stringify(data, null, 2)}</p>
+        {errorMessage && <p>error: {errorMessage}</p>}
+      </div>
     </div>
   )
 }
