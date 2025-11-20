@@ -20,8 +20,13 @@ export const authRouter = (...args: any[]) => {
         const {email, password} = body
         const hashed = await U.hashPasswordP(password)
         const newBody = {email, password: hashed}
-        const {insertedId}
+        const {insertedId} = await user.insertOne(newBody)
+        const jwt = await U.jwtSignP({userId: insertedId})
+
+        res.json({ok: true, body: jwt})
       }
+    } catch (e) {
+      if (e instanceof Error) res.json({ok: false, errorMessage: e.message})
     }
   })
 }
