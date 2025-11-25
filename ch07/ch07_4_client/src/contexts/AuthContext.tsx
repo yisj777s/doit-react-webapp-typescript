@@ -1,6 +1,7 @@
 import type {FC, PropsWithChildren} from 'react'
-import {createContext, useContext, useState, useCallback} from 'react'
+import {createContext, useContext, useState, useCallback, useEffect} from 'react'
 import * as U from '../utils'
+import {post} from '../server'
 
 export type LoggedUser = {email: string; password: string}
 type Callback = () => void
@@ -21,6 +22,7 @@ type AuthProviderProps = {}
 
 export const AuthProvider: FC<PropsWithChildren<AuthProviderProps>> = ({children}) => {
   const [loggedUser, setLoggedUser] = useState<LoggedUser | undefined>(undefined)
+  const [jwt, setJwt] = useState<string>('')
 
   const signup = useCallback((email: string, password: string, callback?: Callback) => {
     const user = {email, password}
