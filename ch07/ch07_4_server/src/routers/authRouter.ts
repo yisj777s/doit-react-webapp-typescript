@@ -7,7 +7,7 @@ export const authRouter = (...args: any[]) => {
   const user = db.collection('user')
   const router = Router()
 
-  return router.post('/signUP', async (req, res) => {
+  return router.post('/signup', async (req, res) => {
     const {body} = req
 
     try {

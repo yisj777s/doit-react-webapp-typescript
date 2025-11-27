@@ -23,12 +23,24 @@ type AuthProviderProps = {}
 export const AuthProvider: FC<PropsWithChildren<AuthProviderProps>> = ({children}) => {
   const [loggedUser, setLoggedUser] = useState<LoggedUser | undefined>(undefined)
   const [jwt, setJwt] = useState<string>('')
+  const [errorMessage, setErrorMessage] = useState<string>('')
 
   const signup = useCallback((email: string, password: string, callback?: Callback) => {
     const user = {email, password}
-    setLoggedUser(notUsed => ({email, password}))
-    U.writeObjectP('user', user).finally(() => callback && callback())
-    // callback && callback()
+
+    post('/auth/signup', user)
+      .then(res => res.json())
+      .then((result: {ok: boolean; body?: string; errorMessage?: string}) => {
+        const {ok, body, errorMessage} = result
+        if (ok) {
+          U.writeStringP('jwt', body ?? '').finally(() => {
+            setJwt(body ?? '')
+            setLoggedUser(notUsed => user)
+            U.writeObjectP('user', user).finally(() => callback && callback())
+          })
+        } else setErrorMessage(errorMessage ?? '')
+      })
+      .catch((e: Error) => setErrorMessage(e.message))
   }, [])
   const login = useCallback((email: string, password: string, callback?: Callback) => {
     setLoggedUser(notUsed => ({email, password}))
