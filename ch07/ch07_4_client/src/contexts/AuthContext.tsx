@@ -51,7 +51,18 @@ export const AuthProvider: FC<PropsWithChildren<AuthProviderProps>> = ({children
     callback && callback()
   }, [])
 
+  useEffect(() => {
+    U.readStringP('jwt')
+      .then(jwt => setJwt(jwt ?? ''))
+      .catch(() => {
+        /* 오류 무시 */
+      })
+  }, [])
+
   const value = {
+    jwt,
+    errorMessage,
+
     loggedUser,
     signup,
     login,
