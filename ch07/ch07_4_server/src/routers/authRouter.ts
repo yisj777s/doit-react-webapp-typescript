@@ -37,5 +37,14 @@ export const authRouter = (...args: any[]) => {
         res.json({ok: false, errorMessage: 'JSON 토큰이 없습니다.'})
         return
       }
+      try {
+        const tmp = authorization.split(' ')
+        if (tmp.length !== 2)
+          res.json({ok: false, errorMessage: '헤더에서 JSON 토큰을 얻을 수 없습니다.'})
+        else {
+          const jwt = tmp[1]
+          const decoded = (await U.jwtVerifyP(jwt)) as {userId: string}
+        }
+      }
     })
 }
