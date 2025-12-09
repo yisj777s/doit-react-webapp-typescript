@@ -44,6 +44,13 @@ export const authRouter = (...args: any[]) => {
         else {
           const jwt = tmp[1]
           const decoded = (await U.jwtVerifyP(jwt)) as {userId: string}
+          const result = await user.findOne({_id: stringToObjectId(decoded.userId)})
+          if (!result) {
+            res.json({ok: false, errorMessage: '등록되지 않은 사용자 입니다.'})
+            return
+          }
+
+          const {email, password} = req.body
         }
       }
     })
