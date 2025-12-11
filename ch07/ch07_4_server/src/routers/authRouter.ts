@@ -51,7 +51,20 @@ export const authRouter = (...args: any[]) => {
           }
 
           const {email, password} = req.body
+          if (email !== result.email) {
+            res.json({ok: false, errorMessage: '이메일 주소가 틀립니다.'})
+            return
+          }
+          const same = await U.comparePasswordP(password, result.password)
+          if (false === same) {
+            res.json({ok: false, errorMessage: '비밀번호가 틀립니다.'})
+            return
+          }
+
+          res.json({ok: true})
         }
+      } catch (e) {
+        if (e instanceof Error) res.json({ok: false, errorMessage: e.message})
       }
     })
 }
